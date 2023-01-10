@@ -3,3 +3,4 @@ Lib
 Scripts
 manage.py
 pyvenv.cfg
+*.csv
