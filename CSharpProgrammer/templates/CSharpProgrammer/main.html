@@ -1,10 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
+    <link type="text/css" href="{% static 'CSharpProgrammer/css/style.css' %}" rel="stylesheet">
 </head>
 <body>
+<img src="{% static 'CSharpProgrammer/images/c--4.svg' %}" width="300px">
 {% include 'CSharpProgrammer/navigation.html' %}
 </body>
 </html>
