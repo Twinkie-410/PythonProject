@@ -80,11 +80,11 @@ ul.list-articles li {
 	height: 60px;
 }
 
-.logo {
-	background-image: url('../images/logo.svg');
-	width: 70px;
-	height: auto;
-}
+/*.logo {*/
+/*	background-image: url('../images/logo.svg');*/
+/*	width: 70px;*/
+/*	height: auto;*/
+/*}*/
 
 ul.mainmenu {
 	list-style: none;
@@ -97,7 +97,7 @@ ul.mainmenu {
 }
 ul.mainmenu li {
 	float: left;
-	margin: 18px 40px 0 30px;
+	margin: 18px 40px 0 10px;
 }
 ul.mainmenu li.logo {margin: 0;}
 /*ul.mainmenu li.last {float: right;}*/
