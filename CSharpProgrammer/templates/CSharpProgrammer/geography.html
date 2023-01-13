@@ -2,5 +2,29 @@
 
 {% block content %}
     <h1>{{ tittle }}</h1>
-    <p>Пока тут пусто</p>
+    <h2>Статистика по городам</h2>
+    <table class="table-data table-city-salary">
+        <tr>
+            <th>Регион</th>
+            <th>Средняя зарплата</th>
+        </tr>
+        {% for record in top_salary %}
+            <tr>
+                <td>{{ record.city }}</td>
+                <td>{{ record.salary }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <table class="table-data table-city-count">
+        <tr>
+            <th>Регион</th>
+            <th>Доля вакансий</th>
+        </tr>
+        {% for record in top_count %}
+            <tr>
+                <td>{{ record.city }}</td>
+                <td>{{ record.get_percent }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock content %}

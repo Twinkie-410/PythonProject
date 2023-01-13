@@ -24,9 +24,16 @@ def get_dataframe(file, vacancy):
     vacancy_count = sharp_vacancy.groupby('Год')['name'].count()
     statistic_vacancies = pd.merge(vacancies_salary, vacancies_count, how='left', on='Год')
     statistic_vacancies.rename(columns={'salary': 'Средняя зарплата', 'name': 'Количество вакансий'}, inplace=True)
+
+    # statistic_vacancies.rename(columns={'Год': 'year', 'salary': 'middle_salary', 'name': 'count_vacancy'}, inplace=True)
+
     statistic_vacancy = pd.merge(vacancy_salary, vacancy_count, how='left', on='Год')
     statistic_vacancy.rename(columns={'salary': f'Средняя зарплата - {vacancy}',
                                       'name': f'Количество вакансий - {vacancy}'}, inplace=True)
+
+    # statistic_vacancy.rename(columns={'salary': 'middle_salary_profession',
+    #                                   'name': 'count_vacancy_profession'}, inplace=True)
+
     statistic = pd.merge(statistic_vacancies, statistic_vacancy, how='left', on='Год').fillna(0).astype(int) \
         .reset_index(level=0)
     return statistic

@@ -2,5 +2,24 @@
 
 {% block content %}
     <h1>{{ tittle }}</h1>
-    <p>Пока тут пусто</p>
+    <h2>Статистика по годам</h2>
+    <table class="table-data">
+        <tr>
+            <th>Год</th>
+            <th>Средняя зарплата</th>
+            <th>Количество вакансий</th>
+            <th>Средняя зарплата - C# Программист</th>
+            <th>Количество вакансий - C# Программист</th>
+        </tr>
+        {% for record in data %}
+            <tr>
+                <td>{{ record.year }}</td>
+                <td>{{ record.middle_salary }}</td>
+                <td>{{ record.count_vacancy }}</td>
+                <td>{{ record.middle_salary_profession }}</td>
+                <td>{{ record.count_vacancy_profession }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock content %}
