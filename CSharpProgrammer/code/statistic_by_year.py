@@ -13,6 +13,7 @@ def get_dataframe(file, vacancy):
     датафрейм со статистикой по годам
     """
     vacancies = pd.read_csv(file)
+    vacancies = vacancies[vacancies['salary'].notna()]
     vacancies['Год'] = vacancies['published_at'].str[:4]
     vacancies_salary = round(vacancies[['Год', 'salary']].groupby('Год').mean())
     vacancies_count = vacancies.groupby('Год')['name'].count()

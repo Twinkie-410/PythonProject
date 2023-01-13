@@ -28,7 +28,8 @@ def join_salaries_field(df_):
     df_["salary"] = df_[["salary_from", "salary_to", "salary_currency", "published_at"]].apply(calculate,
                                                                                                rub_exchange_rate=rub_exchange_rate,
                                                                                                axis=1).astype(float)
-    df_ = df_[["name", "salary", "area_name", "published_at"]]
+    df_["key_skills"].replace(0, np.nan, inplace=True)
+    df_ = df_[["name", "key_skills", "salary", "area_name", "published_at"]]
     return df_
 
 

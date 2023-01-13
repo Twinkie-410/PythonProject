@@ -8,7 +8,7 @@ def get_dataframes(file, vacancy):
     :return: датафреймы со статистикой по городам, по годам для определенной вакансии и региона
     """
     vacancies = pd.read_csv(file)
-    vacancies = vacancies.dropna()
+    vacancies = vacancies[vacancies['salary'].notna()]
     # vacancies = vacancies.query('name.str.lower().str.contains("c#".lower()) or '
     #                             'name.str.lower().str.contains("c sharp".lower()) or '
     #                             'name.str.lower().str.contains("шарп".lower())')
