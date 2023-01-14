@@ -1,8 +1,12 @@
 {% extends 'CSharpProgrammer/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>{{ tittle }}</h1>
-    <h2>Статистика по годам</h2>
+    <h1>Статистика по годам</h1>
+    <div class="images">
+        <img class="salary-image" src="{% static 'CSharpProgrammer/images/salary_by_year.png' %}" alt="">
+        <img class="count-image" src="{% static 'CSharpProgrammer/images/count_by_year.png' %}" alt="">
+    </div>
     <table class="table-data">
         <tr>
             <th>Год</th>

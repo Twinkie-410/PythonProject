@@ -39,19 +39,6 @@ def get_dataframe(file, vacancy):
     return statistic
 
 
-# def get_pdf(dataframe):
-#     """
-#     Создает html-страницу с датафреймом и конвертирует ее в пдф.
-#     :param dataframe: Датафрейм со статистикой
-#     """
-#     env = Environment(loader=FileSystemLoader('.'))
-#     template = env.get_template('statisticPandas.html')
-#     pdf_template = template.render({'table': dataframe.to_html(index=False)})
-#     config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
-#     pdfkit.from_string(pdf_template, 'statisticPandas.pdf',
-#                        configuration=config, options={"enable-local-file-access": ""})
-
-
 if __name__ == '__main__':
     file_path = "data/vacancies_with_skills_middle_salary.csv"
     vacancy = "C# Программист"

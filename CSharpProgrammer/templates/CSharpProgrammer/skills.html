@@ -1,8 +1,7 @@
 {% extends 'CSharpProgrammer/base.html' %}
 
 {% block content %}
-    <h1>{{ tittle }}</h1>
-    <h2>Наиболее востребованные навыки</h2>
+    <h1>Наиболее востребованные навыки</h1>
     {% for year, skills in data %}
         <p>Топ-10 навыков за {{ year }} год</p>
         <table class="table-data">

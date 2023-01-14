@@ -4,18 +4,18 @@ from CSharpProgrammer.models import *
 
 # Create your views here.
 def main_page(request):
-    return render(request, 'CSharpProgrammer/main.html', {'tittle': 'Главная страница'})
+    return render(request, 'CSharpProgrammer/main.html')
 
 
 def relevance(request):
     data = StatisticYear.objects.all()
-    return render(request, 'CSharpProgrammer/relevance.html', {'tittle': 'Востребованность', 'data': data})
+    return render(request, 'CSharpProgrammer/relevance.html', {'data': data})
 
 
 def geography(request):
     top_salary = StatisticTopSalaryCity.objects.all()
     top_count = StatisticTopCountCity.objects.all()
-    return render(request, 'CSharpProgrammer/geography.html', {'tittle': 'География', 'top_salary': top_salary, 'top_count': top_count})
+    return render(request, 'CSharpProgrammer/geography.html', {'top_salary': top_salary, 'top_count': top_count})
 
 
 def skills(request):
@@ -26,7 +26,7 @@ def skills(request):
             dict_skills[record.year] = [(record.skill, record.count)]
         else:
             dict_skills[record.year] += [(record.skill, record.count)]
-    return render(request, 'CSharpProgrammer/skills.html', {'tittle': 'Навыки', 'data': dict_skills.items()})
+    return render(request, 'CSharpProgrammer/skills.html', {'data': dict_skills.items()})
 
 
 def recent_vacancies(request):

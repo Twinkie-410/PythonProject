@@ -24,6 +24,14 @@ html, body {
     width: 45%;
 }
 
+.images {
+    display: flex;
+}
+
+.main-content{
+    text-align: left;
+}
+
 a {
     color: #0059b2;
     text-decoration: none;
