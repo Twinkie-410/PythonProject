@@ -3,17 +3,17 @@
 {% block content %}
     <h1>{{ tittle }}</h1>
     <h2>Наиболее востребованные навыки</h2>
-    {% for year, skills in data.items() %}
+    {% for year, skills in data %}
         <p>Топ-10 навыков за {{ year }} год</p>
         <table class="table-data">
             <tr>
                 <th>Навык</th>
                 <th>Встречается столько раз</th>
             </tr>
-            {% for skill in skills %}
+            {% for skill, count in skills %}
                 <tr>
-                    <td>{{ skill[0] }}</td>
-                    <td>{{ skill[1] }}</td>
+                    <td>{{ skill }}</td>
+                    <td>{{ count }}</td>
                 </tr>
             {% endfor %}
         </table>

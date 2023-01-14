@@ -23,10 +23,10 @@ def skills(request):
     dict_skills = {}
     for record in data:
         if record.year not in dict_skills.keys():
-            dict_skills['year'] = [(record.skill, record.count)]
+            dict_skills[record.year] = [(record.skill, record.count)]
         else:
-            dict_skills['year'] += [(record.skill, record.count)]
-    return render(request, 'CSharpProgrammer/skills.html', {'tittle': 'Навыки', 'data': dict_skills})
+            dict_skills[record.year] += [(record.skill, record.count)]
+    return render(request, 'CSharpProgrammer/skills.html', {'tittle': 'Навыки', 'data': dict_skills.items()})
 
 
 def recent_vacancies(request):
